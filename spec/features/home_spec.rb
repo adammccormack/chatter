@@ -24,5 +24,6 @@ feature 'Viewing posts' do
     expect(page).to have_content 'oh hai'
     expect(page).to have_content 'hallooo'
     expect(page).to have_content 'wow'
+    expect(page).to have_content 'huh?'
   end
 end
