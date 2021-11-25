@@ -15,24 +15,14 @@ end
 #   end
 # end
 
-# feature "Homepage displays messages" do
-#   let(:home) {Home.new}
-#   scenario "When on Homepage" do
-#     message = Message.create(user_id: 1, content: 'hello there')
-
-#     home.visit_homepage
-#     expect(page).to have_content('hello there')
-#   end
-# end
 
 feature 'Viewing posts' do
   let(:home) {Home.new}
   scenario 'A user can see all posts' do
     home.visit_homepage
     
-   
     expect(page).to have_content 'oh hai'
     expect(page).to have_content 'hallooo'
-    expect(page).to have_content 'awkwooord'
+    expect(page).to have_content 'wow'
   end
 end
