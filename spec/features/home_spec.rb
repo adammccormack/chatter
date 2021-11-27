@@ -7,22 +7,9 @@ class Home
   end
 end
 
-# feature "Visit homepage" do
-#   let(:home) {Home.new}
-#   scenario "Able to see text, Word Nerds", :js => true do
-#     home.visit_homepage
-#     expect(page).to have_content("Word Nerds")
-#   end
-# end
-
-# I can expect to be on the homepage
-# I can expect to see a text box
-# I can expect to see a submit button
-# I can expect when I click the submit button to see the post in the homepage
-
 feature 'Posting a message' do
   let(:home) {Home.new}
-  scenario 'User can post a noise (message) to Homepage'do
+  scenario 'User can post a noise to homepage' do
     home.visit_homepage
 
     fill_in('content', with: 'hola hola')
@@ -31,3 +18,23 @@ feature 'Posting a message' do
     expect(page).to have_content 'hola hola'
   end
 end
+
+feature 'Viewing messages' do
+  let(:home) {Home.new}
+  scenario 'Noises are visible on the homepage' do
+    home.visit_homepage
+
+    fill_in('content', with: 'hola hola')
+    click_button('Submit')
+    fill_in('content', with: 'whaddup')
+    click_button('Submit')
+    fill_in('content', with: 'yowza')
+    click_button('Submit')
+
+    expect(page).to start_with('yowza')
+    expect(page).to end_with('hola hola')
+  end
+end
+
+# I can expect to visit the homepage
+# I can expect to see all noises in reverse chronological order

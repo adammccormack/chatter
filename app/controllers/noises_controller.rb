@@ -18,8 +18,15 @@ class NoisesController < ApplicationController
     redirect_to root_path
   end
 
+  def show
+
+  end
+
+
+  private
+
   def noise_params
-    params.permit(:content, :user_id)
+    params.permit(:content)
   end
 
 end 
