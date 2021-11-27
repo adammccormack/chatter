@@ -15,15 +15,19 @@ end
 #   end
 # end
 
+# I can expect to be on the homepage
+# I can expect to see a text box
+# I can expect to see a submit button
+# I can expect when I click the submit button to see the post in the homepage
 
-feature 'Viewing posts' do
+feature 'Posting a message' do
   let(:home) {Home.new}
-  scenario 'A user can see all posts' do
+  scenario 'User can post a noise (message) to Homepage'do
     home.visit_homepage
-    
-    expect(page).to have_content 'oh hai'
-    expect(page).to have_content 'hallooo'
-    expect(page).to have_content 'wow'
-    expect(page).to have_content 'huh?'
+
+    fill_in('content', with: 'hola hola')
+    click_button('Submit')
+
+    expect(page).to have_content 'hola hola'
   end
 end
