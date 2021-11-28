@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-
   get '/noises', to: 'noises#index'
   post '/noises', to: 'noises#create'
 

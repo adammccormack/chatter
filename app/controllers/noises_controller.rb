@@ -1,5 +1,6 @@
-class NoisesController < ApplicationController
+# frozen_string_literal: true
 
+class NoisesController < ApplicationController
   def index
     @noises = Noise.all.order('created_at DESC')
   end
@@ -8,8 +9,7 @@ class NoisesController < ApplicationController
     @noise = Noise.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @noise = Noise.new(noise_params)
@@ -18,14 +18,11 @@ class NoisesController < ApplicationController
     redirect_to root_path
   end
 
-  def show
-  end
-
+  def show; end
 
   private
 
   def noise_params
     params.permit(:content)
   end
-
-end 
+end

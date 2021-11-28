@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 class Home
@@ -8,7 +10,7 @@ class Home
 end
 
 feature 'Posting a message' do
-  let(:home) {Home.new}
+  let(:home) { Home.new }
   scenario 'User can post a noise to homepage' do
     home.visit_homepage
 
@@ -20,7 +22,7 @@ feature 'Posting a message' do
 end
 
 feature 'Viewing messages' do
-  let(:home) {Home.new}
+  let(:home) { Home.new }
   scenario 'Noises are visible on the homepage' do
     home.visit_homepage
 
@@ -30,8 +32,6 @@ feature 'Viewing messages' do
     click_button('Submit')
     fill_in('content', with: 'yowza')
     click_button('Submit')
-    
-    
   end
 end
 
