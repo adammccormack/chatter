@@ -1,7 +1,7 @@
 class NoisesController < ApplicationController
 
   def index
-    @noises = Noise.all
+    @noises = Noise.all.order('created_at DESC')
   end
 
   def new
@@ -19,7 +19,6 @@ class NoisesController < ApplicationController
   end
 
   def show
-
   end
 
 

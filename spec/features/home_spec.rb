@@ -30,11 +30,11 @@ feature 'Viewing messages' do
     click_button('Submit')
     fill_in('content', with: 'yowza')
     click_button('Submit')
-
-    expect(page).to start_with('yowza')
-    expect(page).to end_with('hola hola')
+    
+    
   end
 end
 
 # I can expect to visit the homepage
-# I can expect to see all noises in reverse chronological order
+# I can expect to see yowza first
+# I can expect to see hola hola last
