@@ -23,7 +23,7 @@ end
 
 feature 'Viewing messages' do
   let(:home) { Home.new }
-  scenario 'Noises are visible on the homepage' do
+  scenario 'Noises are visible on the homepage in reverse' do
     home.visit_homepage
 
     fill_in('content', with: 'hola hola')
@@ -32,9 +32,9 @@ feature 'Viewing messages' do
     click_button('Submit')
     fill_in('content', with: 'yowza')
     click_button('Submit')
+
+    expect('yowza').to appear_before('hola hola')
   end
 end
 
-# I can expect to visit the homepage
-# I can expect to see yowza first
-# I can expect to see hola hola last
+
