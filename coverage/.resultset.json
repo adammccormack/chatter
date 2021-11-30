@@ -124,18 +124,8 @@
         ],
         "branches": {
         }
-      },
-      "/Users/m/Projects/chatter/app/services/noise.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1638201259
+    "timestamp": 1638268395
   }
 }
