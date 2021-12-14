@@ -16,15 +16,14 @@
       </div>
       <h1 class="is-size-4 has-text-weight-medium mb-2"> Noises </h1>
 
-  <table>
+  <table id='1'>
 
     <tbody>
       <% @noises.each do |noise| %>
-        
+        <tr>
           <td><%= noise.content %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </section>
-
