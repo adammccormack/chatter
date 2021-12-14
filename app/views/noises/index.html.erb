@@ -22,8 +22,10 @@
       <% @noises.each do |noise| %>
         <tr>
           <td><%= noise.content %></td>
+          <td><%= noise.created_at.strftime("%-I:%S %P %d %b %Y") %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 </section>
+

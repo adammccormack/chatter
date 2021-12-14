@@ -21,6 +21,8 @@ feature 'Posting a message' do
   end
 end
 
+"%I%S %p %d %b %Y"
+
 # feature 'Viewing messages' do
 #   let(:home) { Home.new }
 #   scenario 'Noises are visible on the homepage in reverse' do
