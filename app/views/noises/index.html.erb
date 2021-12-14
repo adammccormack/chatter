@@ -16,12 +16,11 @@
       </div>
       <h1 class="is-size-4 has-text-weight-medium mb-2"> Noises </h1>
 
-  <table id='1'>
-
+  <table>
     <tbody>
       <% @noises.each do |noise| %>
         <tr>
-          <td><%= noise.content %></td>
+          <td class="td-content"><%= noise.content %></td>
           <td><%= noise.created_at.strftime("%-I:%S %P %d %b %Y") %></td>
         </tr>
       <% end %>
