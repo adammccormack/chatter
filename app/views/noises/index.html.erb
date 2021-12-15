@@ -6,25 +6,25 @@
   
   <section class="section">
   
- <h1 class="title">Chatter</h1><br></h1>
-   <body>
-     <%= form_with model: @noise do |f| %>
-     <%= f.text_field :content %>
-     <%= f.submit('Submit') %>
-   <% end %>
-      <div class="mb-6">
-      </div>
-      <h1 class="is-size-4 has-text-weight-medium mb-2"> Noises </h1>
-
-  <table>
-    <tbody>
-      <% @noises.each do |noise| %>
-        <tr>
-          <td class="td-content"><%= noise.content %></td>
-          <td><%= noise.created_at.strftime("%-I:%S %P %d %b %Y") %></td>
-        </tr>
+    <h1 class="title">Chatter</h1><br></h1>
+      <body>
+        <%= form_with model: @noise do |f| %>
+        <%= f.text_field :content %>
+        <%= f.submit('Submit') %>
       <% end %>
-    </tbody>
-  </table>
-</section>
+          <div class="mb-6">
+          </div>
+          <h1 class="is-size-4 has-text-weight-medium mb-2"> Noises </h1>
+
+      <table>
+        <tbody>
+          <% @noises.each do |noise| %>
+            <tr>
+              <td class="td-content"><%= noise.content %></td>
+              <td><%= noise.created_at.strftime("%-I:%S %P %d %b %Y") %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </section>
 

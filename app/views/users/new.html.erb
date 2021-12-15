@@ -1,0 +1,17 @@
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
+  
+  <section class="section">
+  
+    <h1 class="title">Sign Up</h1><br></h1>
+      <body>
+        <%= form_with model: @user do |f| %>
+        <%= f.label :email, 'email' %>
+        <%= f.email_field :address %>
+        <%= f.label :password, 'password' %>
+        <%= f.password_field :password %>
+        <%= f.submit('Submit') %>
+      <% end %>
