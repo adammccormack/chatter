@@ -12,7 +12,7 @@ feature 'Homepage' do
     expect(page).to have_content 'hola hola'
   end
 
-  scenario "Posts are posted in reverse chronological order" do
+  scenario 'Noises are posted in reverse chronological order' do
     visit('/')
 
     fill_in('content', with: 'hi')
@@ -22,10 +22,8 @@ feature 'Homepage' do
     fill_in('content', with: 'bye')
     click_button('Submit')
 
-    rows_array = page.all("td.td-content").each do |td|
-      td.text
-    end
-    
+    rows_array = page.all('td.td-content').each(&:text)
+
     expect(rows_array[0].text).to have_content 'bye'
     expect(rows_array[2].text).to have_content 'hi'
   end

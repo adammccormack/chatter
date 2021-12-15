@@ -9,7 +9,6 @@ SimpleCov.start
 require 'codecov'
 SimpleCov.formatter = SimpleCov::Formatter::Codecov
 
-
 module ActiveSupport
   class TestCase
     # Run tests in parallel with specified workers
