@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   post '/noises', to: 'noises#create'
 
   root 'noises#index'
+
+  get '/users/new', to: 'users#new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
