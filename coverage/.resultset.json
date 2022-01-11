@@ -26,21 +26,26 @@
       "/Users/m/Projects/chatter/app/controllers/users_controller.rb": {
         "lines": [
           1,
+          null,
           1,
           1,
           null,
           null,
           1,
-          1,
-          1,
-          null,
-          1,
+          0,
           null,
           null,
           1,
+          0,
+          0,
+          null,
+          0,
+          null,
           null,
           1,
+          null,
           1,
+          0,
           null,
           null
         ]
@@ -68,46 +73,6 @@
           null
         ]
       },
-      "/Users/m/Projects/chatter/app/controllers/noises_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
-      "/Users/m/Projects/chatter/app/models/noise.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
       "/Users/m/Projects/chatter/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
@@ -123,6 +88,40 @@
       "/Users/m/Projects/chatter/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/m/Projects/chatter/app/controllers/noises_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
           null,
           0,
           0,
@@ -158,8 +157,18 @@
         ],
         "branches": {
         }
+      },
+      "/Users/m/Projects/chatter/app/models/noise.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1640010017
+    "timestamp": 1641832824
   }
 }
