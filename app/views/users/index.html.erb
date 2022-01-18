@@ -8,15 +8,15 @@
   
     <h1 class="title">User Sign Up</h1><br></h1>
         <%= form_with model: @user do |f| %>
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name %>
-        <%= f.label :last_name %>
-        <%= f.text_field :last_name %>
-        <%= f.label :email %>
-        <%= f.text_field :email %>
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-        <%= f.submit('Sign Up') %>
+        <p><%= f.label :first_name %></p>
+        <p><%= f.text_field :first_name %></p>
+        <p><%= f.label :last_name %></p>
+        <p><%= f.text_field :last_name %></p>
+        <p><%= f.label :email %></p>
+        <p><%= f.email_field :email %></p>
+        <p><%= f.label :password %></p>
+        <p><%= f.password_field :password %></p>
+        <p><%= f.submit('Sign Up') %></p>
       <% end %>
   
   </section>
