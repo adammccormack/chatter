@@ -58,6 +58,9 @@
           null,
           1,
           1,
+          null,
+          7,
+          null,
           7,
           null,
           null,
@@ -107,8 +110,12 @@
           1,
           1,
           1,
+          1,
+          1,
+          null,
           null,
           1,
+          null,
           null,
           null,
           1,
@@ -122,6 +129,10 @@
       "/Users/m/Projects/chatter/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
+          null,
+          1,
+          null,
+          null,
           null,
           1,
           null,
@@ -182,6 +193,6 @@
         }
       }
     },
-    "timestamp": 1643030791
+    "timestamp": 1643039991
   }
 }
