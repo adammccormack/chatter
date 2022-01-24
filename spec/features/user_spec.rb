@@ -1,9 +1,8 @@
 require 'rails_helper'
 
-
 feature 'New User' do
   scenario 'User can sign up' do
-    visit('/users')
+    visit('/users/new')
 
     fill_in('first_name', with: 'Greg')
     fill_in('last_name', with: 'Egg')
@@ -12,9 +11,9 @@ feature 'New User' do
     click_button('Sign Up')
 
     expect(User.last.first_name).to eq('Greg')
+    # expect(page).to have_content "Welcome, gregegg@email.com"
   end
 end
-
 
 feature 'authentication' do
   scenario 'User can sign in' do
