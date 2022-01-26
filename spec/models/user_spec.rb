@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require 'bcrypt'
 
@@ -13,7 +15,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'hashes the password using BCrypt' do
-      password = "secret password"
+      password = 'secret password'
       hashed = BCrypt::Password.create(password)
 
       expect(hashed).to eq(password)

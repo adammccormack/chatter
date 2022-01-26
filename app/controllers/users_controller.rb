@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'bcrypt'
 
 class UsersController < ApplicationController
@@ -17,9 +19,7 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
-  def show
-    
-  end
+  def show; end
 
   private
 

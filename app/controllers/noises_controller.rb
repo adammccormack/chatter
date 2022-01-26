@@ -4,7 +4,7 @@ class NoisesController < ApplicationController
   def index
     # Fetch the user from the database, using an ID stored in the session
     @user = User.find_by(id: session[:user_id])
-    
+
     @noises = Noise.all.order('created_at DESC')
   end
 
