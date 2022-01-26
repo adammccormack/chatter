@@ -1,7 +1,7 @@
 require 'bcrypt'
 
 class UsersController < ApplicationController
-
+  before_action :authorised, only: [:show]
   def index
     @users = User.all
   end

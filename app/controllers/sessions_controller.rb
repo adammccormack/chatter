@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  include SessionsHelper
   #Read
   def index
   end
@@ -13,10 +14,12 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by(email: params[:email].downcase)
 
-    if @user.authenticate(email: params[:email], password: params[:password])
+    if @user && @user.authenticate(email: params[:email], password: params[:password])
     session[:user_id] = @user.id
+    redirect_to @user
+    else
+    redirect_to login_path, flash: 'Please try again'
     end
-    redirect_to root_path
   end
 
   #Update
@@ -28,6 +31,8 @@ class SessionsController < ApplicationController
 
   #Delete
   def delete
+    session[:user_id] = nil
+    redirect_to root_path, notice: "Logged out successfully"
   end
 
 end

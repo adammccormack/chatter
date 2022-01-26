@@ -6,11 +6,12 @@ Rails.application.routes.draw do
 
   root 'noises#index'
 
-  get '/users/new', to: 'users#index'
-  post '/users/new', to: 'users#create'
+  get '/signup', to: 'users#index'
+  post '/signup', to: 'users#create'
 
-  get '/sessions/new', to: 'sessions#new'
-  post '/sessions/new', to: 'sessions#create'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout',to: 'sessions#delete'
   
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
