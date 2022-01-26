@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'bcrypt'
 
 RSpec.describe User, type: :model do
   describe '.create' do
@@ -12,9 +13,10 @@ RSpec.describe User, type: :model do
     end
 
     it 'hashes the password using BCrypt' do
-      expect(BCrypt::Password).to receive(:create).with('password123')
+      password = "secret password"
+      hashed = BCrypt::Password.create(password)
 
-      User.create(email: 'test@email.com', password: 'password123')
+      expect(hashed).to eq(password)
     end
   end
 
@@ -26,6 +28,14 @@ RSpec.describe User, type: :model do
 
       expect(result.id).to eq user.id
       expect(result.email).to eq user.email
+    end
+  end
+
+  describe '.authenticate' do
+    it 'returns a user given a correct username and password, if one exists' do
+      user = User.create(first_name: 'josh', last_name: 'jake', email: 'test@email.com', password: 'password123')
+      
+      expect(user.authenticate('wow123')).to be(false)
     end
   end
 end

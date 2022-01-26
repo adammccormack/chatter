@@ -11,18 +11,6 @@ feature 'New User' do
     click_button('Sign Up')
 
     expect(User.last.first_name).to eq('Greg')
-    expect(page).to have_content "Welcome, gregegg@email.com"
-  end
-end
-
-feature 'authentication' do
-  scenario 'User can sign in' do
-    visit ('/sessions/new')
-    
-    fill_in(:email, with: 'test@email.com')
-    fill_in(:password, with: 'password123')
-    click_button('Sign in')
-
-    expect(page).to have_content('Welcome, test@email.com')
+    expect(page).to have_content('Welcome, gregegg@email.com')
   end
 end
