@@ -20,11 +20,10 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       flash[:notice] = "Logged in"
       redirect_to root_path
-    elsif
-        flash[:alert] = "Please activate your account."
-    end
+    else
       flash[:alert] = "Invalid email/password combination"
       redirect_to login_path
+    end
   end
 
   # Update
@@ -34,7 +33,7 @@ class SessionsController < ApplicationController
   def update; end
 
   # Delete
-  def destroy
+  def delete
     session[:user_id] = nil
     flash[:notice] = 'Logged out'
     redirect_to root_path
