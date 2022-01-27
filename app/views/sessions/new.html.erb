@@ -7,11 +7,17 @@
   </head>
   <body>
 
+  <% if @user %>
+    <h1>Welcome, <%= @user.email %></h1>
+  <% else %>
+    <h1>Incorrect login details, please try again</h1>
+  <% end %>
+
   <section class="section">
 
     <h1 class="title">Login</h1>
 
-    <%= form_with model: @user do |f| %>
+    <%= form_with(scope: :session, url: login_path) do |f| %>
       <div class="field">
         <p><%= f.label :email, class: 'label' %></p>
         <div class="control">

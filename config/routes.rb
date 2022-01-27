@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root 'noises#index'
 
-  get '/signup', to: 'users#index'
+  get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
 
   get '/login', to: 'sessions#new'

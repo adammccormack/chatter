@@ -37,7 +37,13 @@ RSpec.describe User, type: :model do
     it 'returns a user given a correct username and password, if one exists' do
       user = User.create(first_name: 'josh', last_name: 'jake', email: 'test@email.com', password: 'password123')
 
-      expect(user.authenticate('wow123')).to be(false)
+      expect(user.authenticate(password: 'wow123')).to be(false)
+    end
+
+    it 'returns false given an incorrect email address' do
+      user = User.create(email: 'test@email.com', password: 'password123')
+
+      expect(user.authenticate(email: 'wrongemail@email.com', password: 'password123')).to be(false)
     end
   end
 end

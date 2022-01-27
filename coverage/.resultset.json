@@ -19,12 +19,16 @@
       },
       "/Users/m/Projects/chatter/app/helpers/sessions_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
       "/Users/m/Projects/chatter/app/helpers/users_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
@@ -48,6 +52,8 @@
       },
       "/Users/m/Projects/chatter/app/models/user.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
@@ -55,37 +61,48 @@
       },
       "/Users/m/Projects/chatter/app/controllers/sessions_controller.rb": {
         "lines": [
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          null,
           null,
           null,
           1,
           null,
           null,
           1,
+          null,
+          null,
+          null,
+          null,
           1,
+          2,
+          null,
+          null,
           null,
           1,
           0,
           null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
           1,
           null,
           null,
-          null,
           1,
           null,
           null,
           1,
-          null,
-          null,
-          null,
-          1,
-          null,
+          0,
+          0,
+          0,
           null,
           null
         ]
@@ -95,6 +112,26 @@
           null,
           null,
           1,
+          1,
+          null,
+          1,
+          10,
+          null,
+          null,
+          1,
+          10,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
           null
         ]
       },
@@ -105,9 +142,9 @@
           1,
           1,
           null,
-          8,
+          7,
           null,
-          8,
+          7,
           null,
           null,
           1,
@@ -135,10 +172,12 @@
       },
       "/Users/m/Projects/chatter/app/controllers/users_controller.rb": {
         "lines": [
-          1,
+          null,
           null,
           1,
           null,
+          1,
+          1,
           1,
           1,
           null,
@@ -152,11 +191,13 @@
           1,
           1,
           1,
+          1,
+          null,
+          0,
+          null,
           null,
           null,
           1,
-          null,
-          null,
           null,
           1,
           null,
@@ -218,6 +259,6 @@
         }
       }
     },
-    "timestamp": 1643209577
+    "timestamp": 1643291036
   }
 }

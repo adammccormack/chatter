@@ -4,7 +4,7 @@ require 'rails_helper'
 
 feature 'New User' do
   scenario 'User can sign up' do
-    visit('/users/new')
+    visit('/signup')
 
     fill_in('first_name', with: 'Greg')
     fill_in('last_name', with: 'Egg')
