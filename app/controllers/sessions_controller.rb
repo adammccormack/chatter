@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
   # Create
   def new
-  
+    
   end
 
   # Create
@@ -21,7 +21,6 @@ class SessionsController < ApplicationController
       flash[:notice] = "Logged in"
       redirect_to root_path
     else
-      flash[:alert] = "Invalid email/password combination"
       redirect_to login_path
     end
   end
