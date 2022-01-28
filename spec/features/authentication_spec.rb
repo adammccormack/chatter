@@ -22,7 +22,7 @@ feature 'authentication' do
     fill_in('Password', with: 'password123')
     click_button('Sign in')
 
-    #expect(page).not_to have_content('Welcome, test@email.com')
+    # expect(page).not_to have_content('Welcome, test@email.com')
     expect(page).to have_content('Please check your email or password')
   end
 end
