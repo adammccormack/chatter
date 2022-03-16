@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
     if @user&.authenticate(params[:session][:password])
       session[:user_id] = @user.id
-      flash[:notice] = 'Logged in'
+      flash[:notice] = "Welcome #{@user.username}"
       redirect_to root_path
     else
       redirect_to login_path

@@ -16,11 +16,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
-      flash[:notice] = 'Welcome ' + @user.username
+      flash[:notice] = "Welcome #{@user.username}"
       session[:user_id] = @user.id
       redirect_to root_path
     elsif @user.invalid?
-      flash[:notice] = 'Username already in use, please try another one.'
+      flash[:notice] = 'Username or email already in use, please try another one.'
       render 'new'
     end
   end

@@ -7,11 +7,12 @@ feature 'authentication' do
     User.create(email: 'test@email.com', password: 'password123')
 
     visit('/login')
+    fill_in('Username', with: 'test_user')
     fill_in('Email', with: 'test@email.com')
     fill_in('Password', with: 'password123')
     click_button('Sign in')
 
-    expect(page).to have_content('Welcome, test@email.com')
+    expect(page).to have_content('Welcome, test_user')
   end
 
   scenario 'a user sees an error if they get their email wrong' do

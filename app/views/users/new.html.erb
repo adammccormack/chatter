@@ -7,11 +7,15 @@
   </head>
   <body>
 
-  <% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
+    <% if @user %>
+      <h1>Welcome, <%= @user.email %></h1>
+    <% end %>
+
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
   
   <section class="section">
 

@@ -4,10 +4,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   </head>
 
-  <% flash.each do |type, msg| %>
-    <div class="alert alert-info">
-      <%= msg %>
-    </div>
+<% if current_user %>
+    <h1>Welcome, <%= current_user.username %></h1>
+  <% else %>
   <% end %>
   
   <section class="section">
