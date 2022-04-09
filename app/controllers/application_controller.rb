@@ -17,3 +17,11 @@ class ApplicationController < ActionController::Base
     end
   end
 end
+
+while (alive) {
+  eat();
+  sleep();
+  code();
+  repeat();
+}
+end

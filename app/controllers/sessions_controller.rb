@@ -19,6 +19,7 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       redirect_to login_path
+      flash[:notice] = "Wrong username or passsword."
     end
   end
 
@@ -28,10 +29,20 @@ class SessionsController < ApplicationController
   # Update
   def update; end
 
+  
   # Delete
   def delete
     session[:user_id] = nil
     flash[:notice] = 'Logged out'
     redirect_to root_path
   end
+
+  private
+
+  def user_params
+    params.permit(:username, :email, :password)
+  end
+  
 end
+
+
