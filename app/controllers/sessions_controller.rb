@@ -11,15 +11,14 @@ class SessionsController < ApplicationController
 
   # Create
   def create
-    @user = User.find_by(email: params[:session][:email].downcase)
+    @user = User.find_by(username: params[:username])
 
-    if @user&.authenticate(params[:session][:password])
+    if @user&.authenticate(params[:password])
       session[:user_id] = @user.id
-      flash[:notice] = "Welcome #{@user.username}"
       redirect_to root_path
     else
-      redirect_to login_path
       flash[:notice] = "Wrong username or passsword."
+      redirect_to login_path
     end
   end
 

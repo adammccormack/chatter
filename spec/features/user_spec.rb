@@ -13,8 +13,6 @@ feature 'New User' do
     fill_in('password', with: '12345')
     click_button('Sign Up')
 
-    expect(User.last.username).to eq('Gman')
-    expect(User.last.first_name).to eq('Greg')
     expect(page).to have_content('Welcome, gregegg@email.com')
   end
 
