@@ -120,11 +120,11 @@
           1,
           1,
           1,
-          17,
+          5,
           null,
           null,
           1,
-          11,
+          5,
           null,
           null,
           1,
@@ -138,37 +138,7 @@
       },
       "/Users/m/Projects/chatter/app/controllers/noises_controller.rb": {
         "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          6,
-          null,
-          6,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          4,
-          4,
-          null,
-          4,
-          null,
-          null,
-          1,
-          null,
-          1,
-          null,
-          1,
-          4,
-          null,
-          null
+
         ]
       },
       "/Users/m/Projects/chatter/app/controllers/users_controller.rb": {
@@ -260,8 +230,24 @@
         ],
         "branches": {
         }
+      },
+      "/Users/m/Projects/chatter/app/models/api.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1649608549
+    "timestamp": 1653975504
   }
 }

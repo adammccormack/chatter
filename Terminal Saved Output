@@ -1,0 +1,1747 @@
+Last login: Sun May  8 00:53:02 on ttys003
+M:~ m$ cd projects
+M:projects m$ cd tech-tests/
+M:tech-tests m$ cd canvas
+M:canvas m$ irb
+irb(main):001:0> x = 5
+irb(main):002:0> y = 6
+=> 6
+irb(main):003:0> x
+=> 5
+irb(main):004:0> size = x*y
+=> 30
+irb(main):005:1* numbers = (1..size).map {|i| i
+irb(main):006:0> }
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29...
+irb(main):007:0> white = numbers.map {|i| i = 'O'}
+=> 
+["O",
+...
+irb(main):008:0> white
+=> 
+["O",                      
+ "O",                      
+ "O",                      
+ "O",                      
+ "O",                      
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O",
+ "O"]
+irb(main):009:0> grid = white.each_slice(x).to_a 
+=> 
+[["O", "O", "O", "O", "O"],
+...
+irb(main):010:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):011:1* def grid(grid)
+irb(main):012:1*   @grid = grid
+irb(main):013:0> end
+=> :grid
+irb(main):014:0> grid(grid)
+=> 
+[["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):015:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):016:1* def move_left(row, col)  
+irb(main):017:2*   while col > 0
+irb(main):018:2*     row = row
+irb(main):019:2*     col = col-1
+irb(main):020:2*     pos_value = @grid[row][col]
+irb(main):021:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):022:2*     p "position_value: #{pos_value}"
+irb(main):023:1*   end
+irb(main):024:0> end
+=> :move_left
+irb(main):025:0> move_left(3,4)
+"row_index: 3, col_index: 3"
+"position_value: O"            
+"row_index: 3, col_index: 2"   
+"position_value: O"            
+"row_index: 3, col_index: 1"   
+"position_value: O"            
+"row_index: 3, col_index: 0"
+"position_value: O"
+=> nil
+irb(main):026:1* def move_left(row, col)  
+irb(main):027:2*   while col > 0 || pos_value != "O"
+irb(main):028:2*     row = row
+irb(main):029:2*     col = col-1
+irb(main):030:2*     pos_value = @grid[row][col]
+irb(main):031:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):032:2*     p "position_value: #{pos_value}"
+irb(main):033:1*   end
+irb(main):034:0> end
+=> :move_left
+irb(main):035:0> move_left(3,4)
+"row_index: 3, col_index: 3"
+"position_value: O"            
+"row_index: 3, col_index: 2"   
+"position_value: O"            
+"row_index: 3, col_index: 1"   
+"position_value: O"            
+"row_index: 3, col_index: 0"
+"position_value: O"
+(irb):27:in `move_left': undefined local variable or method `pos_value' for main:Object (NameError)
+	from (irb):35:in `<main>'
+	from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+	from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+	from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):036:1* def move_left(row, col) 
+irb(main):037:1*   pos_value = @grid[row][col] 
+irb(main):038:2*   while col > 0 || pos_value != "O"
+irb(main):039:2*     row = row
+irb(main):040:2*     col = col-1
+irb(main):041:2*     pos_value = @grid[row][col]
+irb(main):042:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):043:2*     p "position_value: #{pos_value}"
+irb(main):044:1*   end
+irb(main):045:0> end
+=> :move_left
+irb(main):046:0> move_left(3,4)
+"row_index: 3, col_index: 3"
+"position_value: O"            
+"row_index: 3, col_index: 2"   
+"position_value: O"            
+"row_index: 3, col_index: 1"   
+"position_value: O"            
+"row_index: 3, col_index: 0"
+"position_value: O"
+=> nil
+irb(main):047:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):048:0> grid[3][1] = "FUCK"
+=> "FUCK"
+irb(main):049:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "FUCK", "O", "O", "O"],       
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):050:0> grid(grid)
+=> 
+[["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "FUCK", "O", "O", "O"],            
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):051:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "FUCK", "O", "O", "O"],       
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):052:0> move_left(3,4)
+"row_index: 3, col_index: 3"
+"position_value: O"            
+"row_index: 3, col_index: 2"   
+"position_value: O"            
+"row_index: 3, col_index: 1"   
+"position_value: FUCK"         
+"row_index: 3, col_index: 0"
+"position_value: O"
+=> nil
+irb(main):053:1* def move_left(row, col) 
+irb(main):054:1*   pos_value = @grid[row][col] 
+irb(main):055:2*   while col > 0 || pos_value != "O"
+irb(main):056:2*     row = row
+irb(main):057:2*     col = col-1
+irb(main):058:2*     pos_value = @grid[row][col]
+irb(main):059:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):060:2*     p "position_value: #{pos_value}"
+irb(main):061:1*   end
+irb(main):062:0> end
+=> :move_left
+irb(main):063:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "FUCK", "O", "O", "O"],       
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):064:0> move(3,4)
+(irb):64:in `<main>': undefined method `move' for main:Object (NoMethodError)
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):065:0> move_left(3,4)
+"row_index: 3, col_index: 3"
+"position_value: O"                                   
+"row_index: 3, col_index: 2"                          
+"position_value: O"                                   
+"row_index: 3, col_index: 1"                          
+"position_value: FUCK"                                
+"row_index: 3, col_index: 0"                          
+"position_value: O"                                   
+=> nil                                                
+irb(main):066:1* def move_left(row, col) 
+irb(main):067:2*   while col > 0
+irb(main):068:2*     row = row
+irb(main):069:2*     col = col-1
+irb(main):070:2*     pos_value = @grid[row][col]
+irb(main):071:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):072:2*     p "position_value: #{pos_value}"
+irb(main):073:3*     if pos_value != "O"
+irb(main):074:3*      break
+irb(main):075:2*     end
+irb(main):076:1*   end
+irb(main):077:0> end
+=> :move_left
+irb(main):078:0> move(3,4)
+(irb):78:in `<main>': undefined method `move' for main:Object (NoMethodError)
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):079:0> move_left(3,4)
+"row_index: 3, col_index: 3"
+"position_value: O"            
+"row_index: 3, col_index: 2"   
+"position_value: O"            
+"row_index: 3, col_index: 1"   
+"position_value: FUCK"         
+=> nil
+irb(main):080:1* def move_right(row, col) 
+irb(main):081:2*   while col > 0
+irb(main):082:2*     row = row
+irb(main):083:2*     col = col+1
+irb(main):084:2*     pos_value = @grid[row][col]
+irb(main):085:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):086:2*     p "position_value: #{pos_value}"
+irb(main):087:3*     if pos_value != "O"
+irb(main):088:3*      break
+irb(main):089:2*     end
+irb(main):090:1*   end
+irb(main):091:0> end
+=> :move_right
+irb(main):092:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "FUCK", "O", "O", "O"],       
+ ["O", "O", "O", "O", "O"],    
+ ["O", "O", "O", "O", "O"]]    
+irb(main):093:0> move_right(3,4)
+"row_index: 3, col_index: 5"
+"position_value: "             
+=> nil                         
+irb(main):094:0> move_right(3,0)
+=> nil
+irb(main):095:0> move_right(3,0)
+=> nil
+irb(main):096:0> move_right(2,0)
+=> nil
+irb(main):097:0> move_right(2,0)
+=> nil
+irb(main):098:1* def move_right(row, col) 
+irb(main):099:2*   while col > 0
+irb(main):100:2*     row = row
+irb(main):101:2*     col = col+1
+irb(main):102:2*     pos_value = @grid[row][col]
+irb(main):103:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):104:2*     p "position_value: #{pos_value}"
+irb(main):105:3*     if pos_value != "O"
+irb(main):106:3*      break
+irb(main):107:2*     end
+irb(main):108:1*   end
+irb(main):109:0> end
+=> :move_right
+irb(main):110:0> move_right(3,0)
+=> nil
+irb(main):111:0> move_right(2,0)
+=> nil
+irb(main):112:0> move_right(3,3)
+"row_index: 3, col_index: 4"
+"position_value: O"            
+"row_index: 3, col_index: 5"   
+"position_value: "
+=> nil
+irb(main):113:0> move_right(2,1)
+"row_index: 2, col_index: 2"
+"position_value: O"                                   
+"row_index: 2, col_index: 3"                          
+"position_value: O"                                   
+"row_index: 2, col_index: 4"                          
+"position_value: O"                                   
+"row_index: 2, col_index: 5"                          
+"position_value: "                                    
+=> nil                                                
+irb(main):114:0> move_right(3,1)
+"row_index: 3, col_index: 2"
+"position_value: O"                                   
+"row_index: 3, col_index: 3"                          
+"position_value: O"                                   
+"row_index: 3, col_index: 4"                          
+"position_value: O"
+"row_index: 3, col_index: 5"
+"position_value: "
+=> nil
+irb(main):115:0> move_right(4,1)
+"row_index: 4, col_index: 2"
+"position_value: O"
+"row_index: 4, col_index: 3"
+"position_value: O"
+"row_index: 4, col_index: 4"
+"position_value: O"
+"row_index: 4, col_index: 5"
+"position_value: "
+=> nil
+irb(main):116:0> grid[1][4]
+=> "O"
+irb(main):117:0> grid[4][1]
+=> "O"
+irb(main):118:0> grid[3][1]
+=> "FUCK"
+irb(main):119:0> move_right(3,1)
+"row_index: 3, col_index: 2"
+"position_value: O"                  
+"row_index: 3, col_index: 3"         
+"position_value: O"            
+"row_index: 3, col_index: 4"   
+"position_value: O"            
+"row_index: 3, col_index: 5"   
+"position_value: "
+=> nil
+irb(main):120:0> move_right(3,0)
+=> nil
+irb(main):121:0> grid[3][0]
+=> "O"
+irb(main):122:0> grid[3][1]
+=> "FUCK"
+irb(main):123:1* def move_right(row, col) 
+irb(main):124:2*   while col >= 0
+irb(main):125:2*     row = row
+irb(main):126:2*     col = col+1
+irb(main):127:2*     pos_value = @grid[row][col]
+irb(main):128:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):129:2*     p "position_value: #{pos_value}"
+irb(main):130:3*     if pos_value != "O"
+irb(main):131:3*      break
+irb(main):132:2*     end
+irb(main):133:1*   end
+irb(main):134:0> end
+=> :move_right
+irb(main):135:0> move_right(3,0)
+"row_index: 3, col_index: 1"
+"position_value: FUCK"         
+=> nil                         
+irb(main):136:0> grid[0][2] = 'FUCK'
+=> "FUCK"
+irb(main):137:0> grid
+=> 
+[["O", "O", "FUCK", "O", "O"],       
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "FUCK", "O", "O", "O"],       
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):138:0> grid[0][2] = 'F'
+=> "F"
+irb(main):139:0> grid
+=> 
+[["O", "O", "F", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "FUCK", "O", "O", "O"],       
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):140:0> grid[3][1] = 'F'
+=> "F"
+irb(main):141:0> grid
+=> 
+[["O", "O", "F", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):142:0> grid(grid)
+=> 
+[["O", "O", "F", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "F", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):143:0> grid
+=> 
+[["O", "O", "F", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):144:0' grid[5][2] = 'S"
+irb(main):145:0' grid
+irb(main):146:8' 
+^C                                   
+irb(main):144:0> grid
+=> 
+[["O", "O", "F", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):145:0> grid[5]
+=> ["O", "O", "O", "O", "O"]
+irb(main):146:0> grid[5][2]
+=> "O"
+irb(main):147:0> grid[5][2] = "S"
+=> "S"
+irb(main):148:0> grid
+=> 
+[["O", "O", "F", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):149:0> grid(grid)
+=> 
+[["O", "O", "F", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "F", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):150:0> grid
+=> 
+[["O", "O", "F", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):151:0> grid[5][2]
+=> "S"
+irb(main):152:0> grid[0][2]
+=> "F"
+irb(main):153:1* def move_up(row, col)
+irb(main):154:2*   while row > 0
+irb(main):155:2*     row = row-1
+irb(main):156:2*     col = col
+irb(main):157:2*     pos_value = @grid[row][col]
+irb(main):158:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):159:2*     p "position_value: #{pos_value}"
+irb(main):160:1*   end
+irb(main):161:0> end
+=> :move_up
+irb(main):162:0> move_up(5,2)
+"row_index: 4, col_index: 2"
+"position_value: O"            
+"row_index: 3, col_index: 2"   
+"position_value: O"            
+"row_index: 2, col_index: 2"   
+"position_value: O"            
+"row_index: 1, col_index: 2"   
+"position_value: O"            
+"row_index: 0, col_index: 2"
+"position_value: F"
+=> nil
+irb(main):163:1* def move_up(row, col)
+irb(main):164:2*   while row > 0
+irb(main):165:2*     row = row-1
+irb(main):166:2*     col = col
+irb(main):167:2*     pos_value = @grid[row][col]
+irb(main):168:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):169:2*     p "position_value: #{pos_value}"
+irb(main):170:3*     if pos_value != "O"
+irb(main):171:3*       break
+irb(main):172:2*      end
+irb(main):173:1*   end
+irb(main):174:0> end
+=> :move_up
+irb(main):175:0> move_up(5,2)
+"row_index: 4, col_index: 2"
+"position_value: O"            
+"row_index: 3, col_index: 2"   
+"position_value: O"            
+"row_index: 2, col_index: 2"   
+"position_value: O"            
+"row_index: 1, col_index: 2"   
+"position_value: O"            
+"row_index: 0, col_index: 2"
+"position_value: F"
+=> nil
+irb(main):176:1* def move_up(row, col)
+irb(main):177:2*   while row >= 0
+irb(main):178:2*     row = row-1
+irb(main):179:2*     col = col
+irb(main):180:2*     pos_value = @grid[row][col]
+irb(main):181:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):182:2*     p "position_value: #{pos_value}"
+irb(main):183:3*     if pos_value != "O"
+irb(main):184:3*       break
+irb(main):185:2*      end
+irb(main):186:1*   end
+irb(main):187:0> end
+=> :move_up
+irb(main):188:0> move_up(5,2)
+"row_index: 4, col_index: 2"
+"position_value: O"            
+"row_index: 3, col_index: 2"   
+"position_value: O"            
+"row_index: 2, col_index: 2"   
+"position_value: O"            
+"row_index: 1, col_index: 2"   
+"position_value: O"            
+"row_index: 0, col_index: 2"
+"position_value: F"
+=> nil
+irb(main):189:0> grid
+=> 
+[["O", "O", "F", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):190:0> grid(grid)
+=> 
+[["O", "O", "F", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "F", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):191:0> grid[5][2]
+=> "S"
+irb(main):192:0> move_up(5,2)
+"row_index: 4, col_index: 2"
+"position_value: O"                              
+"row_index: 3, col_index: 2"                     
+"position_value: O"                              
+"row_index: 2, col_index: 2"                     
+"position_value: O"                              
+"row_index: 1, col_index: 2"                     
+"position_value: O"                              
+"row_index: 0, col_index: 2"                     
+"position_value: F"                              
+=> nil                                           
+irb(main):193:0> grid[5][2]
+=> "S"
+irb(main):194:0> grid[4][2]
+=> "O"
+irb(main):195:0> grid[3][2]
+=> "O"
+irb(main):196:0> grid[2][2]
+=> "O"
+irb(main):197:0> grid[1][2]
+=> "O"
+irb(main):198:0> grid[0][2]
+=> "F"
+irb(main):199:0> grid
+=> 
+[["O", "O", "F", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):200:0> grid[0][2] = "O"
+=> "O"
+irb(main):201:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):202:0> grid[1][2] = "F"
+=> "F"
+irb(main):203:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "F", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):204:0> grid(grid)
+=> 
+[["O", "O", "O", "O", "O"],               
+ ["O", "O", "F", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "F", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):205:1* def move_up(row, col)
+irb(main):206:2*   while row > 0
+irb(main):207:2*     row = row-1
+irb(main):208:2*     col = col
+irb(main):209:2*     pos_value = @grid[row][col]
+irb(main):210:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):211:2*     p "position_value: #{pos_value}"
+irb(main):212:3*     if pos_value != "O"
+irb(main):213:3*       break
+irb(main):214:2*      end
+irb(main):215:1*   end
+irb(main):216:0> end
+=> :move_up
+irb(main):217:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "F", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):218:0> @grid
+=> 
+[["O", "O", "O", "O", "O"],
+ ["O", "O", "F", "O", "O"],
+ ["O", "O", "O", "O", "O"],
+ ["O", "F", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):219:0> move_up(5,2)
+"row_index: 4, col_index: 2"
+"position_value: O"            
+"row_index: 3, col_index: 2"   
+"position_value: O"            
+"row_index: 2, col_index: 2"   
+"position_value: O"            
+"row_index: 1, col_index: 2"   
+"position_value: F"            
+=> nil
+irb(main):220:0> grid[0][2]
+=> "O"
+irb(main):221:0> grid[1][2] = "O"
+=> "O"
+irb(main):222:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):223:0> grid(grid)
+=> 
+[["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "F", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):224:1* def move_down(row, col)
+irb(main):225:2*   while row >= 0
+irb(main):226:2*     row = row+1
+irb(main):227:2*     col = col
+irb(main):228:2*     pos_value = @grid[row][col]
+irb(main):229:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):230:2*     p "position_value: #{pos_value}"
+irb(main):231:3*     if pos_value != "O"
+irb(main):232:3*       break
+irb(main):233:2*      end
+irb(main):234:1*   end
+irb(main):235:0> end
+=> :move_down
+irb(main):236:0> move_down(0,2)
+"row_index: 1, col_index: 2"
+"position_value: O"            
+"row_index: 2, col_index: 2"   
+"position_value: O"            
+"row_index: 3, col_index: 2"   
+"position_value: O"            
+"row_index: 4, col_index: 2"   
+"position_value: O"            
+"row_index: 5, col_index: 2"   
+"position_value: S"
+=> nil
+irb(main):237:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):238:0> grid[5][2] = "O"
+=> "O"
+irb(main):239:0> grid[3][2] = "M"
+=> "M"
+irb(main):240:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "M", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):241:0> grid(grid)
+=> 
+[["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "F", "M", "O", "O"],               
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):242:0> move_down(0,2)
+"row_index: 1, col_index: 2"
+"position_value: O"            
+"row_index: 2, col_index: 2"   
+"position_value: O"            
+"row_index: 3, col_index: 2"   
+"position_value: M"            
+=> nil                         
+irb(main):243:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "F", "M", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):244:0> grid = numbers.each_slice(x).to_a
+=> 
+[[1, 2, 3, 4, 5],                                   
+...                                  
+irb(main):245:0> white = numbers.map {|i| i = 'O'}
+=> 
+["O",
+...
+irb(main):246:0> grid = white.each_slice(x).to_a
+=> 
+[["O", "O", "O", "O", "O"],                       
+...
+irb(main):247:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):248:0> grid(grid)
+=> 
+[["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):249:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):250:0> grid[5][2]
+=> "O"
+irb(main):251:0> grid[5][2] = "S"
+=> "S"
+irb(main):252:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):253:0> grid(grid)
+=> 
+[["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):254:0> grid[5][2]
+=> "S"
+irb(main):255:1* def fill_up(row, col)
+irb(main):256:2*   while row >= 0
+irb(main):257:2*     row = row-1
+irb(main):258:2*     col = col
+irb(main):259:2*     pos_value = @grid[row][col]
+irb(main):260:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):261:2*     p "position_value: #{pos_value}"
+irb(main):262:3*     if pos_value != "O"
+irb(main):263:3*       break
+irb(main):264:2*      end
+irb(main):265:1*   end
+irb(main):266:0> end
+=> :fill_up
+irb(main):267:0> fill_up(5,2)
+"row_index: 4, col_index: 2"
+"position_value: O"     
+"row_index: 3, col_index: 2"
+"position_value: O"     
+"row_index: 2, col_index: 2"
+"position_value: O"     
+"row_index: 1, col_index: 2"
+"position_value: O"     
+"row_index: 0, col_index: 2"
+"position_value: O"
+"row_index: -1, col_index: 2"
+"position_value: S"
+=> nil
+irb(main):268:1* def fill_up(row, col)
+irb(main):269:2*   while row > 0
+irb(main):270:2*     row = row-1
+irb(main):271:2*     col = col
+irb(main):272:2*     pos_value = @grid[row][col]
+irb(main):273:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):274:2*     p "position_value: #{pos_value}"
+irb(main):275:3*     if pos_value != "O"
+irb(main):276:3*       break
+irb(main):277:2*      end
+irb(main):278:1*   end
+irb(main):279:0> end
+=> :fill_up
+irb(main):280:0> fill_up(5,2)
+"row_index: 4, col_index: 2"
+"position_value: O"     
+"row_index: 3, col_index: 2"
+"position_value: O"     
+"row_index: 2, col_index: 2"
+"position_value: O"     
+"row_index: 1, col_index: 2"
+"position_value: O"     
+"row_index: 0, col_index: 2"
+"position_value: O"
+=> nil
+irb(main):281:1* def fill_up(row, col)
+irb(main):282:2*   while row > 0
+irb(main):283:2*     row = row-1
+irb(main):284:2*     col = col
+irb(main):285:2*     pos_value = @grid[row][col]
+irb(main):286:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):287:2*     p "position_value: #{pos_value}"
+irb(main):288:3*     if pos_value == "O"
+irb(main):289:3*       pos_value = "N"
+irb(main):290:3*     else
+irb(main):291:3*       break
+irb(main):292:2*     end
+irb(main):293:1*   end
+irb(main):294:0> end
+=> :fill_up
+irb(main):295:0> fill_up(5,2)
+"row_index: 4, col_index: 2"
+"position_value: O"     
+"row_index: 3, col_index: 2"
+"position_value: O"     
+"row_index: 2, col_index: 2"
+"position_value: O"     
+"row_index: 1, col_index: 2"
+"position_value: O"     
+"row_index: 0, col_index: 2"
+"position_value: O"
+=> nil
+irb(main):296:1* def fill_up(row, col)
+irb(main):297:1*   @pos_value = @grid[row][col]
+irb(main):298:2*   while row > 0
+irb(main):299:2*     row = row-1
+irb(main):300:2*     col = col
+irb(main):301:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):302:2*     p "position_value: #{pos_value}"
+irb(main):303:3*     if @pos_value == "O"
+irb(main):304:3*       @pos_value = "N"
+irb(main):305:3*     else
+irb(main):306:3*       break
+irb(main):307:2*     end
+irb(main):308:1*   end
+irb(main):309:0> end
+=> :fill_up
+irb(main):310:0> fill_up(5,2)
+"row_index: 4, col_index: 2"
+(irb):302:in `fill_up': undefined local variable or method `pos_value' for main:Object (NameError)
+Did you mean?  @pos_value
+        from (irb):310:in `<main>'
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):311:1* def fill_up(row, col)
+irb(main):312:1*   @pos_value = @grid[row][col]
+irb(main):313:2*   while row > 0
+irb(main):314:2*     row = row-1
+irb(main):315:2*     col = col
+irb(main):316:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):317:2*     p "position_value: #{@pos_value}"
+irb(main):318:3*     if @pos_value == "O"
+irb(main):319:3*       @pos_value = "N"
+irb(main):320:3*     else
+irb(main):321:3*       break
+irb(main):322:2*     end
+irb(main):323:1*   end
+irb(main):324:0> end
+=> :fill_up
+irb(main):325:0> fill_up(5,2)
+"row_index: 4, col_index: 2"
+"position_value: S"     
+=> nil                  
+irb(main):326:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):327:0> fill_up(5,1)
+"row_index: 4, col_index: 1"
+"position_value: O"
+"row_index: 3, col_index: 1"
+"position_value: N"
+=> nil
+irb(main):328:1* def fill_up(row, col)
+irb(main):329:1*   @pos_value = @grid[row][col]
+irb(main):330:2*   while row > 0
+irb(main):331:2*     row = row-1
+irb(main):332:2*     col = col
+irb(main):333:3*     if @pos_value == "O"
+irb(main):334:3*       @pos_value = "N"
+irb(main):335:3*     else
+irb(main):336:3*       @pos_value != "O"
+irb(main):337:3*     break
+irb(main):338:2*     end
+irb(main):339:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):340:2*     p "position_value: #{@pos_value}"
+irb(main):341:1*   end
+irb(main):342:0> end
+=> :fill_up
+irb(main):343:0> fill_up(5,0)
+"row_index: 4, col_index: 0"
+"position_value: N"     
+=> nil                  
+irb(main):344:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "S", "O", "O"]]
+irb(main):345:1* def fill_up(row, col)
+irb(main):346:2*   while row > 0
+irb(main):347:2*     row = row-1
+irb(main):348:2*     col = col
+irb(main):349:2*     pos_value = @grid[row][col]
+irb(main):350:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):351:2*     p "position_value: #{pos_value}"
+irb(main):352:3*     if pos_value != "O"
+irb(main):353:3*       break
+irb(main):354:2*      end
+irb(main):355:1*   end
+irb(main):356:0> end
+=> :fill_up
+irb(main):357:0> fill_up(5,2)
+"row_index: 4, col_index: 2"
+"position_value: O"     
+"row_index: 3, col_index: 2"
+"position_value: O"     
+"row_index: 2, col_index: 2"
+"position_value: O"     
+"row_index: 1, col_index: 2"
+"position_value: O"     
+"row_index: 0, col_index: 2"
+"position_value: O"
+=> nil
+irb(main):358:1* def fill_up(row, col)
+irb(main):359:2*   while row > 0
+irb(main):360:2*     row = row-1
+irb(main):361:2*     col = col
+irb(main):362:2*     pos_value = [row][col]
+irb(main):363:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):364:2*     p "position_value: #{pos_value}"
+irb(main):365:3*     if pos_value != "O"
+irb(main):366:3*       break
+irb(main):367:2*      end
+irb(main):368:1*   end
+irb(main):369:0> end
+irb(main):370:0> fill_up(5,2)
+"row_index: 4, col_index: 2"
+"position_value: "
+=> nil
+irb(main):371:0> 
+^C
+irb(main):371:0> quit
+M:canvas m$ irb
+irb(main):001:1* def fill_up(row, col, grid)
+irb(main):002:1*   grid = grid
+irb(main):003:2*   while row > 0
+irb(main):004:2*     row = row-1
+irb(main):005:2*     col = col
+irb(main):006:2*     pos_value = grid[row][col]
+irb(main):007:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):008:2*     p "position_value: #{pos_value}"
+irb(main):009:3*     if pos_value != "O"
+irb(main):010:3*       break
+irb(main):011:2*      end
+irb(main):012:1*   end
+irb(main):013:0> end
+=> :fill_up
+irb(main):014:0> gid
+(irb):14:in `<main>': undefined local variable or method `gid' for main:Object (NameError)
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):015:0> grid
+(irb):15:in `<main>': undefined local variable or method `grid' for main:Object (NameError)
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):016:0> x = 5
+=> 5
+irb(main):017:0> y = 6
+=> 6
+irb(main):018:0> 
+irb(main):019:0> size = x*y
+=> 30
+irb(main):020:1* numbers = (1..size).map {|i| i
+irb(main):021:0> }
+=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29...
+irb(main):022:0> white = numbers.map {|i| i = 'O'}
+=> 
+["O",
+...
+irb(main):023:0> grid = white.each_slice(x).to_a
+=> 
+[["O", "O", "O", "O", "O"],                       
+...
+irb(main):024:0> grid(grid)
+(irb):24:in `<main>': undefined method `grid' for main:Object (NoMethodError)
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):025:1* def grid(grid)
+irb(main):026:1*   @grid = grid
+irb(main):027:0> end
+=> :grid
+irb(main):028:0> grid(grid)
+=> 
+[["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):029:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: O"     
+"row_index: 3, col_index: 2"
+"position_value: O"     
+"row_index: 2, col_index: 2"
+"position_value: O"     
+"row_index: 1, col_index: 2"
+"position_value: O"     
+"row_index: 0, col_index: 2"
+"position_value: O"
+=> nil
+irb(main):030:1* def fill_up(row, col, grid)
+irb(main):031:1*   grid = grid
+irb(main):032:2*   while row > 0
+irb(main):033:2*     row = row-1
+irb(main):034:2*     col = col
+irb(main):035:2*     pos_value = grid[row][col]
+irb(main):036:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):037:2*     p "position_value: #{pos_value}"
+irb(main):038:3*     if pos_value == "O"
+irb(main):039:3*         pos_value = "N"
+irb(main):040:2*      end
+irb(main):041:1*   end
+irb(main):042:0> end
+=> :fill_up
+irb(main):043:0> fill_up(5,2)
+(irb):30:in `fill_up': wrong number of arguments (given 2, expected 3) (ArgumentError)
+        from (irb):43:in `<main>'
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):044:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: O"                               
+"row_index: 3, col_index: 2"                      
+"position_value: O"                               
+"row_index: 2, col_index: 2"                      
+"position_value: O"
+"row_index: 1, col_index: 2"
+"position_value: O"
+"row_index: 0, col_index: 2"
+"position_value: O"
+=> nil
+irb(main):045:1* def fill_up(row, col, grid)
+irb(main):046:1*   grid = grid
+irb(main):047:2*   while row > 0
+irb(main):048:2*     row = row-1
+irb(main):049:2*     col = col
+irb(main):050:2*     pos_value = grid[row][col]
+irb(main):051:2*     new_pos_value = nil
+irb(main):052:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):053:2*     p "position_value: #{pos_value}"
+irb(main):054:3*     if pos_value == "O"
+irb(main):055:3*        new_pos_value = "N"
+irb(main):056:2*     end
+irb(main):057:1*   end
+irb(main):058:0> end
+irb(main):059:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: O"     
+"row_index: 3, col_index: 2"
+"position_value: O"     
+"row_index: 2, col_index: 2"
+"position_value: O"     
+"row_index: 1, col_index: 2"
+"position_value: O"     
+"row_index: 0, col_index: 2"
+"position_value: O"
+=> nil
+irb(main):060:0> new_pos_value
+(irb):60:in `<main>': undefined local variable or method `new_pos_value' for main:Object (NameError)
+irb(mainfrom /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):061:0> fill_up.new_pos_value
+(irb):45:in `fill_up': wrong number of arguments (given 0, expected 3) (ArgumentError)
+        from (irb):61:in `<main>'                                            
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'             
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'           
+irb(main):062:1* def fill_up(row, col)
+irb(main):063:1*   grid = grid
+irb(main):064:2*   while row > 0
+irb(main):065:2*     row = row-1
+irb(main):066:2*     col = col
+irb(main):067:2*     pos_value = grid[row][col]
+irb(main):068:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):069:2*     p "position_value: #{pos_value}"
+irb(main):070:3*     if pos_value == "O"
+irb(main):071:3*        grid[row][cal] = "N"
+irb(main):072:2*      end
+irb(main):073:1*   end
+irb(main):074:0> end
+=> :fill_up
+irb(main):075:0> fill_up(5,2)
+(irb):67:in `fill_up': undefined method `[]' for nil:NilClass (NoMethodError)
+        from (irb):75:in `<main>'
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):076:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):077:0> grid(grid)
+=> 
+[["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):078:1* def fill_up(row, col, grid)
+irb(main):079:1*   grid = grid
+irb(main):080:2*   while row > 0
+irb(main):081:2*     row = row-1
+irb(main):082:2*     col = col
+irb(main):083:2*     pos_value = grid[row][col]
+irb(main):084:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):085:2*     p "position_value: #{pos_value}"
+irb(main):086:3*     if pos_value == "O"
+irb(main):087:3*        grid[row][cal] = "N"
+irb(main):088:2*      end
+irb(main):089:1*   end
+irb(main):090:0> end
+=> :fill_up
+irb(main):091:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: O"     
+(irb):87:in `fill_up': undefined local variable or method `cal' for main:Object (NameError)
+Did you mean?  col      
+        from (irb):91:in `<main>'
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):092:1* def fill_up(row, col, grid)
+irb(main):093:1*   grid = grid
+irb(main):094:2*   while row > 0
+irb(main):095:2*     row = row-1
+irb(main):096:2*     col = col
+irb(main):097:2*     pos_value = grid[row][col]
+irb(main):098:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):099:2*     p "position_value: #{pos_value}"
+irb(main):100:3*     if pos_value == "O"
+irb(main):101:3*        grid[row][col] = "N"
+irb(main):102:2*      end
+irb(main):103:1*   end
+irb(main):104:0> end
+=> :fill_up
+irb(main):105:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: O"     
+"row_index: 3, col_index: 2"
+"position_value: O"     
+"row_index: 2, col_index: 2"
+"position_value: O"     
+"row_index: 1, col_index: 2"
+"position_value: O"     
+"row_index: 0, col_index: 2"
+"position_value: O"
+=> nil
+irb(main):106:1* def fill_up(row, col, grid)
+irb(main):107:1*   grid = grid
+irb(main):108:2*   while row > 0
+irb(main):109:2*     row = row-1
+irb(main):110:2*     col = col
+irb(main):111:2*     pos_value = grid[row][col]
+irb(main):112:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):113:2*     p "position_value: #{pos_value}"
+irb(main):114:3*     if pos_value == "O"
+irb(main):115:3*        new_value = "N"
+irb(main):116:3*        grid[row][cal] = new_value
+irb(main):117:3*     else
+irb(main):118:3*       break
+irb(main):119:2*     end
+irb(main):120:1*   end
+irb(main):121:0> end
+=> :fill_up
+irb(main):122:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: N"     
+=> nil                  
+irb(main):123:1* def fill_up(row, col, grid)
+irb(main):124:1*   grid = grid
+irb(main):125:2*   while row > 0
+irb(main):126:2*     row = row-1
+irb(main):127:2*     col = col
+irb(main):128:2*     pos_value = grid[row][col]
+irb(main):129:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):130:2*     p "position_value: #{pos_value}"
+irb(main):131:3*     if pos_value == "O"
+irb(main):132:3*        new_value = "N"
+irb(main):133:3*        grid[row][cal] = new_value
+irb(main):134:3*     else
+irb(main):135:2*     end
+irb(main):136:1*   end
+irb(main):137:0> end
+=> :fill_up
+irb(main):138:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: N"     
+"row_index: 3, col_index: 2"
+"position_value: N"     
+"row_index: 2, col_index: 2"
+"position_value: N"     
+"row_index: 1, col_index: 2"
+"position_value: N"     
+"row_index: 0, col_index: 2"
+"position_value: N"
+=> nil
+irb(main):139:0> grid
+=> 
+[["O", "O", "N", "O", "O"],          
+ ["O", "O", "N", "O", "O"],          
+ ["O", "O", "N", "O", "O"],          
+ ["O", "O", "N", "O", "O"],          
+ ["O", "O", "N", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):140:0> @grid
+=> 
+[["O", "O", "N", "O", "O"],
+ ["O", "O", "N", "O", "O"],
+ ["O", "O", "N", "O", "O"],
+ ["O", "O", "N", "O", "O"],
+ ["O", "O", "N", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):141:0> grid
+=> 
+[["O", "O", "N", "O", "O"],          
+ ["O", "O", "N", "O", "O"],          
+ ["O", "O", "N", "O", "O"],          
+ ["O", "O", "N", "O", "O"],          
+ ["O", "O", "N", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):142:1* def fill_up(row, col, grid)
+irb(main):143:1*   grid = grid
+irb(main):144:2*   while row >= 0
+irb(main):145:2*     row = row-1
+irb(main):146:2*     col = col
+irb(main):147:2*     pos_value = grid[row][col]
+irb(main):148:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):149:2*     p "position_value: #{pos_value}"
+irb(main):150:3*     if pos_value == "O"
+irb(main):151:3*        new_value = "C"
+irb(main):152:3*        grid[row][cal] = new_value
+irb(main):153:3*     else
+irb(main):154:2*     end
+irb(main):155:1*   end
+irb(main):156:0> end
+=> :fill_up
+irb(main):157:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: N"     
+"row_index: 3, col_index: 2"
+"position_value: N"     
+"row_index: 2, col_index: 2"
+"position_value: N"     
+"row_index: 1, col_index: 2"
+"position_value: N"     
+"row_index: 0, col_index: 2"
+"position_value: N"
+"row_index: -1, col_index: 2"
+"position_value: O"
+(irb):152:in `fill_up': undefined local variable or method `cal' for main:Object (NameError)
+Did you mean?  col
+	from (irb):157:in `<main>'
+	from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+	from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+	from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):158:1* def fill_up(row, col, grid)
+irb(main):159:1*   grid = grid
+irb(main):160:2*   while row >= 0
+irb(main):161:2*     row = row-1
+irb(main):162:2*     col = col
+irb(main):163:2*     pos_value = grid[row][col]
+irb(main):164:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):165:2*     p "position_value: #{pos_value}"
+irb(main):166:3*     if pos_value == "O"
+irb(main):167:3*        new_value = "C"
+irb(main):168:3*        grid[row][col] = new_value
+irb(main):169:3*     else
+irb(main):170:2*     end
+irb(main):171:1*   end
+irb(main):172:0> end
+=> :fill_up
+irb(main):173:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: N"     
+"row_index: 3, col_index: 2"
+"position_value: N"     
+"row_index: 2, col_index: 2"
+"position_value: N"     
+"row_index: 1, col_index: 2"
+"position_value: N"     
+"row_index: 0, col_index: 2"
+"position_value: N"
+"row_index: -1, col_index: 2"
+"position_value: O"
+=> nil
+irb(main):174:1* def fill_up(row, col, grid)
+irb(main):175:1*   grid = grid
+irb(main):176:2*   while row >= 0
+irb(main):177:2*     row = row-1
+irb(main):178:2*     col = col
+irb(main):179:2*     pos_value = grid[row][col]
+irb(main):180:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):181:2*     p "position_value: #{pos_value}"
+irb(main):182:3*     if pos_value == "O"
+irb(main):183:3*        new_value = "C"
+irb(main):184:3*        grid[row][col] = new_value
+irb(main):185:3*     elsif pos_value != "O"
+irb(main):186:3*        new_value = "C"
+irb(main):187:3*        grid[row][col] = new_value
+irb(main):188:2*     end
+irb(main):189:1*   end
+irb(main):190:0> end
+=> :fill_up
+irb(main):191:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: N"     
+"row_index: 3, col_index: 2"
+"position_value: N"     
+"row_index: 2, col_index: 2"
+"position_value: N"     
+"row_index: 1, col_index: 2"
+"position_value: N"     
+"row_index: 0, col_index: 2"
+"position_value: N"
+"row_index: -1, col_index: 2"
+"position_value: C"
+=> nil
+irb(main):192:1* def fill_up(row, col, grid)
+irb(main):193:1*   grid = grid
+irb(main):194:2*   while row >= 0
+irb(main):195:2*     row = row-1
+irb(main):196:2*     col = col
+irb(main):197:2*     pos_value = grid[row][col]
+irb(main):198:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):199:2*     p "position_value: #{pos_value}"
+irb(main):200:3*     if pos_value == "O"
+irb(main):201:3*        new_value = "C"
+irb(main):202:3*        grid[row][col] = new_value
+irb(main):203:3*     elsif pos_value == "N"
+irb(main):204:3*        new_value = "C"
+irb(main):205:3*        grid[row][col] = new_value
+irb(main):206:3*     else
+irb(main):207:2*     end
+irb(main):208:1*   end
+irb(main):209:0> end
+=> :fill_up
+irb(main):210:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: C"     
+"row_index: 3, col_index: 2"
+"position_value: C"     
+"row_index: 2, col_index: 2"
+"position_value: C"     
+"row_index: 1, col_index: 2"
+"position_value: C"     
+"row_index: 0, col_index: 2"
+"position_value: C"
+"row_index: -1, col_index: 2"
+"position_value: C"
+=> nil
+irb(main):211:1* def fill_up(row, col, grid)
+irb(main):212:1*   grid = grid
+irb(main):213:2*   while row >= 0
+irb(main):214:2*     row = row-1
+irb(main):215:2*     col = col
+irb(main):216:2*     pos_value = grid[row][col]
+irb(main):217:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):218:2*     p "position_value: #{pos_value}"
+irb(main):219:3*     if pos_value == "O"
+irb(main):220:3*        new_value = "C"
+irb(main):221:3*        grid[row][col] = new_value
+irb(main):222:3*     elsif pos_value.exclude?("O")
+irb(main):223:3*        new_value = "C"
+irb(main):224:3*        grid[row][col] = new_value
+irb(main):225:3*     else
+irb(main):226:2*     end
+irb(main):227:1*   end
+irb(main):228:0> end
+=> :fill_up
+irb(main):229:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: C"     
+(irb):222:in `fill_up': undefined method `exclude?' for "C":String (NoMethodError)
+        from (irb):229:in `<main>'
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):230:1* def fill_up(row, col, grid)
+irb(main):231:1*   grid = grid
+irb(main):232:2*   while row >= 0
+irb(main):233:2*     row = row-1
+irb(main):234:2*     col = col
+irb(main):235:2*     pos_value = grid[row][col]
+irb(main):236:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):237:2*     p "position_value: #{pos_value}"
+irb(main):238:3*     if pos_value == "O"
+irb(main):239:3*        new_value = "C"
+irb(main):240:3*        grid[row][col] = new_value
+irb(main):241:3*     elsif pos_value.exclude("O")
+irb(main):242:3*        new_value = "C"
+irb(main):243:3*        grid[row][col] = new_value
+irb(main):244:3*     else
+irb(main):245:2*     end
+irb(main):246:1*   end
+irb(main):247:0> end
+=> :fill_up
+irb(main):248:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: C"     
+(irb):241:in `fill_up': undefined method `exclude' for "C":String (NoMethodError)
+        from (irb):248:in `<main>'
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):249:0> v = "O"
+=> "O"
+irb(main):250:0> v.include?
+(irb):250:in `include?': wrong number of arguments (given 0, expected 1) (ArgumentError)
+        from (irb):250:in `<main>'                                      
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'        
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'      
+irb(main):251:0> v.include?("O")
+=> true
+irb(main):252:1* def fill_up(row, col, grid)
+irb(main):253:1*   grid = grid
+irb(main):254:2*   while row >= 0
+irb(main):255:2*     row = row-1
+irb(main):256:2*     col = col
+irb(main):257:2*     pos_value = grid[row][col]
+irb(main):258:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):259:2*     p "position_value: #{pos_value}"
+irb(main):260:3*     if pos_value == "O"
+irb(main):261:3*        new_value = "C"
+irb(main):262:3*        grid[row][col] = new_value
+irb(main):263:3*     elsif pos_value.exclude("O") == true
+irb(main):264:3*        new_value = "C"
+irb(main):265:3*        grid[row][col] = new_value
+irb(main):266:3*     else
+irb(main):267:2*     end
+irb(main):268:1*   end
+irb(main):269:0> end
+=> :fill_up
+irb(main):270:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: C"     
+(irb):263:in `fill_up': undefined method `exclude' for "C":String (NoMethodError)
+        from (irb):270:in `<main>'
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):271:1* def fill_up(row, col, grid)
+irb(main):272:1*   grid = grid
+irb(main):273:2*   while row >= 0
+irb(main):274:2*     row = row-1
+irb(main):275:2*     col = col
+irb(main):276:2*     pos_value = grid[row][col]
+irb(main):277:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):278:2*     p "position_value: #{pos_value}"
+irb(main):279:3*     if pos_value == "O"
+irb(main):280:3*        new_value = "C"
+irb(main):281:3*        grid[row][col] = new_value
+irb(main):282:3*     elsif pos_value = pos_value.exclude("O") == true
+irb(main):283:3*        new_value = "C"
+irb(main):284:3*        grid[row][col] = new_value
+irb(main):285:3*     else
+irb(main):286:2*     end
+irb(main):287:1*   end
+irb(main):288:0> end
+=> :fill_up
+irb(main):289:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: C"     
+(irb):282:in `fill_up': undefined method `exclude' for "C":String (NoMethodError)
+        from (irb):289:in `<main>'
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):290:0> grid
+=> 
+[["O", "O", "C", "O", "O"],          
+ ["O", "O", "C", "O", "O"],          
+ ["O", "O", "C", "O", "O"],          
+ ["O", "O", "C", "O", "O"],          
+ ["O", "O", "C", "O", "O"],
+ ["O", "O", "C", "O", "O"]]
+irb(main):291:0> grid = numbers.each_slice(x).to_a
+=> 
+[[1, 2, 3, 4, 5],                                   
+...
+irb(main):292:0> white = numbers.map {|i| i = 'O'}
+=> 
+["O",
+...
+irb(main):293:0> grid = white.each_slice(x).to_a
+=> 
+[["O", "O", "O", "O", "O"],                       
+...
+irb(main):294:0> grid(grid)
+=> 
+[["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):295:1* def fill_up(row, col, grid)
+irb(main):296:1*   grid = grid
+irb(main):297:2*   while row >= 0
+irb(main):298:2*     row = row-1
+irb(main):299:2*     col = col
+irb(main):300:2*     pos_value = grid[row][col]
+irb(main):301:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):302:2*     p "position_value: #{pos_value}"
+irb(main):303:3*     if pos_value == "O"
+irb(main):304:3*        new_value = "J"
+irb(main):305:3*        grid[row][col] = new_value
+irb(main):306:3*     else
+irb(main):307:2*     end
+irb(main):308:1*   end
+irb(main):309:0> end
+=> :fill_up
+irb(main):310:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: O"     
+"row_index: 3, col_index: 2"
+"position_value: O"     
+"row_index: 2, col_index: 2"
+"position_value: O"     
+"row_index: 1, col_index: 2"
+"position_value: O"     
+"row_index: 0, col_index: 2"
+"position_value: O"
+"row_index: -1, col_index: 2"
+"position_value: O"
+=> nil
+irb(main):311:1* def fill_up(row, col, grid)
+irb(main):312:1*   grid = grid
+irb(main):313:2*   while row > 0
+irb(main):314:2*     row = row-1
+irb(main):315:2*     col = col
+irb(main):316:2*     pos_value = grid[row][col]
+irb(main):317:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):318:2*     p "position_value: #{pos_value}"
+irb(main):319:3*     if pos_value == "O"
+irb(main):320:3*        new_value = "N"
+irb(main):321:3*        grid[row][cal] = new_value
+irb(main):322:3*     else
+irb(main):323:2*     end
+irb(main):324:1*   end
+irb(main):325:0> end
+=> :fill_up
+irb(main):326:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: J"     
+"row_index: 3, col_index: 2"
+"position_value: J"     
+"row_index: 2, col_index: 2"
+"position_value: J"     
+"row_index: 1, col_index: 2"
+"position_value: J"     
+"row_index: 0, col_index: 2"
+"position_value: J"
+=> nil
+irb(main):327:0> grid
+=> 
+[["O", "O", "J", "O", "O"],          
+ ["O", "O", "J", "O", "O"],          
+ ["O", "O", "J", "O", "O"],          
+ ["O", "O", "J", "O", "O"],          
+ ["O", "O", "J", "O", "O"],
+ ["O", "O", "J", "O", "O"]]
+irb(main):328:0> grid = numbers.each_slice(x).to_a
+=> 
+[[1, 2, 3, 4, 5],                                   
+...
+irb(main):329:0> white = numbers.map {|i| i = 'O'}
+=> 
+["O",
+...
+irb(main):330:0> grid = white.each_slice(x).to_a
+=> 
+[["O", "O", "O", "O", "O"],                       
+...
+irb(main):331:0> grid
+=> 
+[["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],          
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):332:0> grid(grid)
+=> 
+[["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],               
+ ["O", "O", "O", "O", "O"],
+ ["O", "O", "O", "O", "O"]]
+irb(main):333:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: O"     
+(irb):321:in `fill_up': undefined local variable or method `cal' for main:Object (NameError)
+Did you mean?  col      
+        from (irb):333:in `<main>'
+        from /Users/m/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/irb-1.4.1/exe/irb:11:in `<top (required)>'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `load'
+        from /Users/m/.rbenv/versions/3.1.2/bin/irb:25:in `<main>'
+irb(main):334:1* def fill_up(row, col, grid)
+irb(main):335:1*   grid = grid
+irb(main):336:2*   while row > 0
+irb(main):337:2*     row = row-1
+irb(main):338:2*     col = col
+irb(main):339:2*     pos_value = grid[row][col]
+irb(main):340:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):341:2*     p "position_value: #{pos_value}"
+irb(main):342:3*     if pos_value == "O"
+irb(main):343:3*        new_value = "N"
+irb(main):344:3*        grid[row][col] = new_value
+irb(main):345:3*     else
+irb(main):346:2*     end
+irb(main):347:1*   end
+irb(main):348:0> end
+=> :fill_up
+irb(main):349:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: O"     
+"row_index: 3, col_index: 2"
+"position_value: O"     
+"row_index: 2, col_index: 2"
+"position_value: O"     
+"row_index: 1, col_index: 2"
+"position_value: O"     
+"row_index: 0, col_index: 2"
+"position_value: O"
+=> nil
+irb(main):350:1* def fill_up(row, col, grid)
+irb(main):351:1*   grid = grid
+irb(main):352:2*   while row > 0
+irb(main):353:2*     row = row-1
+irb(main):354:2*     col = col
+irb(main):355:2*     pos_value = grid[row][col]
+irb(main):356:2*     p "row_index: #{row}, col_index: #{col}"
+irb(main):357:2*     p "position_value: #{pos_value}"
+irb(main):358:3*     if pos_value == "O"
+irb(main):359:3*        new_value = "N"
+irb(main):360:3*        @grid[row][col] = new_value
+irb(main):361:3*     else
+irb(main):362:2*     end
+irb(main):363:1*   end
+irb(main):364:0> end
+=> :fill_up
+irb(main):365:0> fill_up(5,2,grid)
+"row_index: 4, col_index: 2"
+"position_value: N"     
+"row_index: 3, col_index: 2"
+"position_value: N"     
+"row_index: 2, col_index: 2"
+"position_value: N"     
+"row_index: 1, col_index: 2"
+"position_value: N"     
+"row_index: 0, col_index: 2"
+"position_value: N"
+=> nil
+irb(main):366:0> 

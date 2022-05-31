@@ -17,7 +17,7 @@ class NoisesController < ApplicationController
   def create
     @noise = Noise.new(noise_params)
     @noise.save
-
+    
     redirect_to root_path
   end
 
@@ -26,6 +26,6 @@ class NoisesController < ApplicationController
   private
 
   def noise_params
-    params.permit(:content)
+    params.require(:noise)permit(:content)
   end
 end

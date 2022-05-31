@@ -1,7 +1,8 @@
 # frozen_string_literal: true
-
 require 'rails_helper'
 
+
+RSpec.describe 'User' do
 feature 'New User' do
   scenario 'User can sign up' do
     visit('/signup')
@@ -28,5 +29,6 @@ feature 'New User' do
     click_button('delete')
 
     expect(page).to_not have_content('hello there this is my first noise')
+  end
   end
 end
