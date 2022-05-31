@@ -26,6 +26,6 @@ class NoisesController < ApplicationController
   private
 
   def noise_params
-    params.require(:noise)permit(:content)
+    params.require(:noise).permit(:content)
   end
 end
